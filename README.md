@@ -11,7 +11,7 @@ When the `contains` method is called, the following steps are taken:
 1. Let _len_ be ToLength(Get(_O_, `"length"`)).
 1. ReturnIfAbrupt(_len_).
 1. If _len_ is 0, return **false**.
-1. Let _n_ be ToInteger(_fromIndex_). (If _fromIndex_ is **undefined**, this step produces the value 0).
+1. Let _n_ be ToInteger(_fromIndex_). (If _fromIndex_ is **undefined**, this step produces the value 0.)
 1. ReturnIfAbrupt(_n_).
 1. If _n_ ≥ _len_, return **false**.
 1. If _n_ ≥ 0, then
