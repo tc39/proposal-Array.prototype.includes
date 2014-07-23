@@ -26,6 +26,6 @@ When the `contains` method is called, the following steps are taken:
         1. Let _elementK_ be the result of Get(_O_, ToString(_k_)).
         1. ReturnIfAbrupt(_elementK_).
         1. Let _same_ be the result of performing Strict Equality Comparison _searchElement_ === _elementK_.
-        1. If _same_ is **true**, return _k_.
+        1. If _same_ is **true**, return **true**.
     1. Increase _k_ by 1.
 1. Return **false**.
