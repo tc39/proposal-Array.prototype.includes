@@ -1,6 +1,6 @@
 # Array.prototype.contains ( searchElement [ , fromIndex ] )
 
-NOTE `contains` compares _searchElement_ to the elements of the array, in ascending order, using the Strict Equality Comparison algorithm, and if found at any position, returns **true**; otherwise, **false** is returned.
+NOTE `contains` compares _searchElement_ to the elements of the array, in ascending order, using the SameValueZero algorithm, and if found at any position, returns **true**; otherwise, **false** is returned.
 
 The optional second argument _fromIndex_ defaults to 0 (i.e. the whole array is searched). If it is greater than or equal to the length of the array, **false** is returned, i.e. the array will not be searched. If it is negative, it is used as the offset from the end of the array to compute _fromIndex_. If the computed index is less than 0, the whole array will be searched.
 
@@ -25,7 +25,6 @@ When the `contains` method is called, the following steps are taken:
     1. If _kPresent_ is **true**, then
         1. Let _elementK_ be the result of Get(_O_, ToString(_k_)).
         1. ReturnIfAbrupt(_elementK_).
-        1. Let _same_ be the result of performing Strict Equality Comparison _searchElement_ === _elementK_.
-        1. If _same_ is **true**, return **true**.
+        1. If SameValueZero(_searchElement_, _elementK_) is **true**, return **true**.
     1. Increase _k_ by 1.
 1. Return **false**.
