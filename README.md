@@ -31,6 +31,8 @@ This has almost the same semantics as the above, except that it uses the SameVal
 
 Thus, this proposal solves both problems seen in existing code.
 
+We additionally add a `fromIndex` parameter, similar to `Array.prototype.indexOf` and `String.prototype.contains`, for consistency.
+
 ## FAQs
 
 ### Why `contains` instead of `has`?
@@ -72,4 +74,7 @@ assert([1, 2, NaN].contains(NaN) === true);
 
 assert([1, 2, -0].contains(+0) === true);
 assert([1, 2, +0].contains(-0) === true);
+
+assert(["a", "b", "c"].contains("a") === true);
+assert(["a", "b", "c"].contains("a", 1) === false);
 ```
