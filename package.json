@@ -1,0 +1,27 @@
+{
+  "name": "array.prototype.contains",
+  "version": "1.0.0",
+  "description": "Tests and a polyfill for the ES proposal for Array.prototype.contains",
+  "main": "reference-implementation/index.js",
+  "scripts": {
+    "test": "test262-harness --prelude=reference-implementation/index.js --consoleCommand=\"node --harmony\" --runner=console --reporter=tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/domenic/Array.prototype.contains.git"
+  },
+  "keywords": [
+    "ecmascript",
+    "array",
+    "test262",
+    "contains"
+  ],
+  "author": "Domenic Denicola <domenic@domenicdenicola.com> (http://domenic.me/)",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "test262-harness": "bterlson/test262-harness"
+  },
+  "dependencies": {
+    "especially": "^1.6.0"
+  }
+}
