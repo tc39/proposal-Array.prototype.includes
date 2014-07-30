@@ -53,7 +53,7 @@ There are four equality algorithms in the current ES6 draft:
 
 - Abstract Equality Comparison (`==`)
 - Strict Equality Comparison (`===`): used by `Array.prototype.indexOf`, `Array.prototype.lastIndexOf`, and `case`-matching
-- SameValueZero: used by `%TypedArray` and `ArrayBuffer` constructors, as well as `Map` and `Set` operations
+- SameValueZero: used by `%TypedArray%` and `ArrayBuffer` constructors, as well as `Map` and `Set` operations
 - SameValue: used in all other places
 
 (Note however that most places SameValue is used could be replaced by SameValueZero since those places often never compare primitives, or at least never compare numbers.)
