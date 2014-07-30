@@ -28,3 +28,5 @@ When the `contains` method is called, the following steps are taken:
         1. If SameValueZero(_searchElement_, _elementK_) is **true**, return **true**.
     1. Increase _k_ by 1.
 1. Return **false**.
+
+The `length` property of the `contains` method is **1**.
