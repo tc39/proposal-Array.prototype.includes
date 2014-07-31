@@ -47,6 +47,12 @@ The best consistency here is with `String`, not with `Map` or `Set`.
 
 Finally, the web has classes like [DOMStringList](https://developer.mozilla.org/en-US/docs/Web/API/DOMStringList) and [DOMTokenList](http://dom.spec.whatwg.org/#interface-domtokenlist) which are array-like, and have methods named `contains` with the same semantics. Meshing with those, and in the case of `DOMStringList` potentially replacing them, is a nice side benefit.
 
+### But `String.prototype.contains` works on strings, not characters!?
+
+Yes, that's true. The best way to think about this is that `String.prototype.indexOf` and `String.prototype.contains` behave like their `Array.prototype` counterparts in the special case of a single character. But the string versions can also be used in the more general case of a larger string.
+
+So in this way, the relationship between `String.prototype.contains` and `Array.prototype.contains` is the same as the relationship between `String.prototype.indexOf` and `Array.prototype.indexOf`.
+
 ### Why SameValueZero?
 
 There are four equality algorithms in the current ES6 draft:
