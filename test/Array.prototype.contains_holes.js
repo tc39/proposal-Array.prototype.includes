@@ -3,6 +3,7 @@
 
 /*---
 description: Array.prototype.contains skips holes, and does not treat them as undefined
+author: Domenic Denicola
 ---*/
 
 var arrayWithHoles = [,,,];

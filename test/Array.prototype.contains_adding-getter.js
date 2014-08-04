@@ -3,6 +3,7 @@
 
 /*---
 description: Array.prototype.contains sees a new element added by a getter that is hit during iteration
+author: Domenic Denicola
 ---*/
 
 var arrayLike = {

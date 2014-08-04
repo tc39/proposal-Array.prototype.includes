@@ -3,6 +3,7 @@
 
 /*---
 description: Array.prototype.contains does not see an element removed by a getter that is hit during iteration
+author: Domenic Denicola
 ---*/
 
 var arrayLike = {

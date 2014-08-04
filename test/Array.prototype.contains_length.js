@@ -3,6 +3,7 @@
 
 /*---
 description: Array.prototype.contains should have length 1
+author: Domenic Denicola
 ---*/
 
 if (Array.prototype.contains.length !== 1) {

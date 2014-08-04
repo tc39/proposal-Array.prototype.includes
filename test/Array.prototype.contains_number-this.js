@@ -5,6 +5,7 @@
 description: Array.prototype.contains should use ToObject on this, so that when
              called with a number, it picks up numeric properties from
              Number.prototype
+author: Domenic Denicola
 ---*/
 
 Number.prototype[0] = "a";

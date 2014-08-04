@@ -3,6 +3,7 @@
 
 /*---
 description: Some basic illustrative examples of Array.prototype.contains ("smoke tests")
+author: Domenic Denicola
 ---*/
 
 if ([1, 2, 3].contains(2) !== true) {

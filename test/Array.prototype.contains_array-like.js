@@ -3,6 +3,7 @@
 
 /*---
 description: Array.prototype.contains works on array-like objects
+author: Domenic Denicola
 ---*/
 
 var arrayLike1 = { length: 5, 0: "a", 1: "b" };
