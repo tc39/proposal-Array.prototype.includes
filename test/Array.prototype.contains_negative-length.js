@@ -33,3 +33,13 @@ if (Array.prototype.contains.call({ length: -3, '-1': 2 }, 2) !== false) {
 if (Array.prototype.contains.call({ length: -Infinity, '-1': 2 }, 2) !== false) {
     $ERROR('Expected { length: -Infinity, "-1": 2 } to not contain 2');
 }
+
+
+var arrayLikeWithTrap = {
+    length: -1,
+    get 0() {
+        $ERROR('Getter for 0 was called');
+    }
+};
+
+Array.prototype.contains.call(arrayLikeWithTrap);

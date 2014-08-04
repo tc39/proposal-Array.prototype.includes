@@ -55,3 +55,13 @@ if (Array.prototype.contains.call({ length: 0, 0: undefined }, undefined) !== fa
 if (Array.prototype.contains.call({ length: 0, 0: NaN }, NaN) !== false) {
     $ERROR('Expected { length: 0, 0: NaN } to not contain NaN');
 }
+
+
+var arrayLikeWithTrap = {
+    length: 0,
+    get 0() {
+        $ERROR('Getter for 0 was called');
+    }
+};
+
+Array.prototype.contains.call(arrayLikeWithTrap);
