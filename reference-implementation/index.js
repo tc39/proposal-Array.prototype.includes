@@ -1,7 +1,6 @@
 "use strict";
 
 var Get = require("especially/abstract-operations").Get;
-var HasProperty = require("especially/abstract-operations").HasProperty;
 var SameValueZero = require("especially/abstract-operations").SameValueZero;
 var ToInteger = require("especially/abstract-operations").ToInteger;
 var ToLength = require("especially/abstract-operations").ToLength;
@@ -37,13 +36,9 @@ define_built_in_data_property(Array.prototype, "contains", function contains(sea
     }
 
     while (k < len) {
-        var kPresent = HasProperty(O, ToString(k));
-
-        if (kPresent === true) {
-            var elementK = Get(O, ToString(k));
-            if (SameValueZero(searchElement, elementK) === true) {
-                return true;
-            }
+        var elementK = Get(O, ToString(k));
+        if (SameValueZero(searchElement, elementK) === true) {
+            return true;
         }
 
         ++k;

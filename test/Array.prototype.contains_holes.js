@@ -8,8 +8,16 @@ author: Domenic Denicola
 
 var arrayWithHoles = [,,,];
 
-var result = Array.prototype.contains.call(arrayWithHoles, undefined);
+var result1 = Array.prototype.contains.call(arrayWithHoles, undefined);
 
-if (result !== false) {
-    $ERROR('Expected array-like to not contain undefined');
+if (result1 !== true) {
+    $ERROR('Expected array with many holes to contain undefined');
+}
+
+var arrayWithASingleHole = ['a', 'b',, 'd'];
+
+var result2 = arrayWithASingleHole.contains(undefined);
+
+if (result2 !== true) {
+    $ERROR('Expected array with a single hole to contain undefined');
 }

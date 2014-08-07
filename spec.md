@@ -20,12 +20,9 @@ When the `contains` method is called, the following steps are taken:
     1. Let _k_ be _len_ - abs(_n_).
     1. If _k_ < 0, then let _k_ be 0.
 1. Repeat, while _k_ < _len_
-    1. Let _kPresent_ be HasProperty(_O_, ToString(_k_)).
-    1. ReturnIfAbrupt(_kPresent_).
-    1. If _kPresent_ is **true**, then
-        1. Let _elementK_ be the result of Get(_O_, ToString(_k_)).
-        1. ReturnIfAbrupt(_elementK_).
-        1. If SameValueZero(_searchElement_, _elementK_) is **true**, return **true**.
+    1. Let _elementK_ be the result of Get(_O_, ToString(_k_)).
+    1. ReturnIfAbrupt(_elementK_).
+    1. If SameValueZero(_searchElement_, _elementK_) is **true**, return **true**.
     1. Increase _k_ by 1.
 1. Return **false**.
 
