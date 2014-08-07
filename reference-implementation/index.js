@@ -8,8 +8,9 @@ var ToLength = require("especially/abstract-operations").ToLength;
 var ToObject = require("especially/abstract-operations").ToObject;
 var ToString = require("especially/abstract-operations").ToString;
 var abs = require("especially/math").abs;
+var define_built_in_data_property = require("especially/meta").define_built_in_data_property;
 
-Array.prototype.contains = function (searchElement) {
+define_built_in_data_property(Array.prototype, "contains", function (searchElement) {
     var fromIndex = arguments[1];
 
     var O = ToObject(this);
@@ -49,4 +50,4 @@ Array.prototype.contains = function (searchElement) {
     }
 
     return false;
-};
+});
