@@ -8,11 +8,11 @@ author: Robert Kowalski
 ---*/
 
 if ([1, 2].contains(2, 3) !== false) {
-  $ERROR('Expected that the array was not searched');
+    $ERROR('Expected that the array was not searched');
 }
 
 if ([1, 2].contains(2, 2) !== false) {
-  $ERROR('Expected that the array was not searched');
+    $ERROR('Expected that the array was not searched');
 }
 
 var arrayLikeWithTrap = {
@@ -26,9 +26,9 @@ var arrayLikeWithTrap = {
 };
 
 if (Array.prototype.contains.call(arrayLikeWithTrap, 'c', 2) !== false) {
-  $ERROR('Expected that the array was not searched');
+    $ERROR('Expected that the array was not searched');
 }
 
 if (Array.prototype.contains.call(arrayLikeWithTrap, 'c', 3) !== false) {
-  $ERROR('Expected that the array was not searched');
+    $ERROR('Expected that the array was not searched');
 }
