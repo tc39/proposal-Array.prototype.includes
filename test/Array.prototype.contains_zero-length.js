@@ -65,3 +65,12 @@ var arrayLikeWithTrap = {
 };
 
 Array.prototype.contains.call(arrayLikeWithTrap);
+
+var trappedFromIndex = {
+    valueOf: function () {
+        $ERROR('Should not try to convert fromIndex to a number on a zero-length array');
+    }
+};
+
+[].contains('a', trappedFromIndex);
+Array.prototype.contains.call({ length: 0 }, trappedFromIndex);
