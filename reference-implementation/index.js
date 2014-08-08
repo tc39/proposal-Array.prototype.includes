@@ -21,12 +21,14 @@ define_built_in_data_property(Array.prototype, "contains", function contains(sea
 
     var n = ToInteger(fromIndex);
 
-    if (n >= len) {
-        return false;
-    }
-
     var k;
-    if (n >= 0) {
+    if (n === +Infinity) {
+        return false;
+    } else if (n === -Infinity) {
+        k = 0;
+    } else if (n >= len) {
+        return false;
+    } else if (n >= 0) {
         k = n;
     } else {
         k = len - abs(n);
