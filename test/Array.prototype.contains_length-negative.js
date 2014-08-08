@@ -42,4 +42,6 @@ var arrayLikeWithTrap = {
     }
 };
 
-Array.prototype.contains.call(arrayLikeWithTrap);
+if (Array.prototype.contains.call(arrayLikeWithTrap, 2) !== false) {
+    $ERROR('Expected trapped array-like with length -1 to not contain 2');
+}
