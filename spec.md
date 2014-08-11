@@ -13,13 +13,12 @@ When the `contains` method is called, the following steps are taken:
 1. If _len_ is 0, return **false**.
 1. Let _n_ be ToInteger(_fromIndex_). (If _fromIndex_ is **undefined**, this step produces the value 0.)
 1. ReturnIfAbrupt(_n_).
-1. If _n_ is +∞, return **false**.
-1. Else if _n_ is -∞, let _k_ be 0.
-1. Else if _n_ ≥ _len_, return **false**.
-1. Else if _n_ ≥ 0, let _k_ be _n_.
-1. Else,
+1. If _n_ ≥ _len_, return **false**.
+1. If _n_ ≥ 0, then
+    1. Let _k_ be _n_.
+1. Else _n_ < 0,
     1. Let _k_ be _len_ - abs(_n_).
-    1. If _k_ < 0, let _k_ be 0.
+    1. If _k_ < 0, then let _k_ be 0.
 1. Repeat, while _k_ < _len_
     1. Let _elementK_ be the result of Get(_O_, ToString(_k_)).
     1. ReturnIfAbrupt(_elementK_).
