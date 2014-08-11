@@ -6,6 +6,8 @@ description: Array.prototype.contains should clamp positive lengths to 2^53 - 1
 author: Domenic Denicola
 ---*/
 
+var fromIndexForLargeIndexTests = 9007199254740990;
+
 if (Array.prototype.contains.call({ length: 1 }, 2) !== false) {
     $ERROR('Expected { length: 1 } to not contain 2');
 }
@@ -18,7 +20,7 @@ if (Array.prototype.contains.call({ length: +Infinity, 0: 'a' }, 'a') !== true) 
     $ERROR('Expected { length: +Infinity, 0: \'a\' } to contain \'a\'');
 }
 
-if (Array.prototype.contains.call({ length: +Infinity }, 'a') !== false) {
+if (Array.prototype.contains.call({ length: +Infinity }, 'a', fromIndexForLargeIndexTests) !== false) {
     $ERROR('Expected { length: +Infinity } to not contain \'a\'');
 }
 
@@ -30,7 +32,7 @@ var arrayLikeWithTrap = {
     '9007199254740993': 'a'
 };
 
-if (Array.prototype.contains.call(arrayLikeWithTrap, 'a') !== false) {
+if (Array.prototype.contains.call(arrayLikeWithTrap, 'a', fromIndexForLargeIndexTests) !== false) {
     $ERROR('Expected trapped array-like with length 9007199254740992 to not contain \'a\'');
 }
 
@@ -39,6 +41,6 @@ var arrayLikeWithTooBigLength = {
     '9007199254740992': 'a'
 };
 
-if (Array.prototype.contains.call(arrayLikeWithTooBigLength, 'a') !== false) {
+if (Array.prototype.contains.call(arrayLikeWithTooBigLength, 'a', fromIndexForLargeIndexTests) !== false) {
     $ERROR('Expected array-like with too-big length to not contain \'a\', since it is beyond the max length');
 }
