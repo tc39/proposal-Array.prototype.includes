@@ -4,7 +4,7 @@
   "description": "Tests and a polyfill for the ES proposal for Array.prototype.contains",
   "main": "reference-implementation/index.js",
   "scripts": {
-    "test": "test262-harness --prelude=reference-implementation/index.js --consoleCommand=\"node --harmony\" --runner=console --reporter=tap test/*.js"
+    "test": "test262-harness --prelude=reference-implementation/index.js --consoleCommand=\"node --harmony\" --runner=console test/*.js"
   },
   "repository": {
     "type": "git",
