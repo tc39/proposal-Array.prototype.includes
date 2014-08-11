@@ -22,6 +22,6 @@
     "test262-harness": "bterlson/test262-harness"
   },
   "dependencies": {
-    "especially": "^1.6.0"
+    "especially": "^1.8.1"
   }
 }
