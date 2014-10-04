@@ -21,6 +21,9 @@ var arrayLike = {
     0: 'a',
     get 1() {
         return 'b';
+    },
+    get '-1'() {
+        $ERROR('Should not try to get the element at index -1');
     }
 };
 
