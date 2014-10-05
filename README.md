@@ -1,5 +1,11 @@
 # `Array.prototype.contains` Proposal
 
+## Status
+
+This proposal is officially in stage 1 of [the TC39 process](https://docs.google.com/document/d/1QbEE0BsO4lvl7NFTn5WXWeiEIBfaVUF7Dk0hpPpPDzU/edit); the author believes it is ready to advance to stage 2, but has not yet had time to present to the committee.
+
+However, its further advancement is blocked by the fact that [it is not web-compatible](http://esdiscuss.org/topic/having-a-non-enumerable-array-prototype-contains-may-not-be-web-compatible). There are [thoughts](http://esdiscuss.org/topic/array-prototype-contains-solutions) of how we could work toward a solution, but nothing is clear yet.
+
 ## Motivation
 
 When using ECMAScript arrays, it is commonly desired to determine if the array contains an element. The prevailing pattern for this is
