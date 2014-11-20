@@ -2,7 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains should terminate if ToLength ends up being called on a symbol length
+description: Array.prototype.includes should terminate if ToLength ends up being called on a symbol length
 negative: TypeError
 ---*/
 
@@ -19,4 +19,4 @@ var badLength = {
     }
 };
 
-Array.prototype.contains.call(badLength, 'a', fromIndexTrap);
+Array.prototype.includes.call(badLength, 'a', fromIndexTrap);

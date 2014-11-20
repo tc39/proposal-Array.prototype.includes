@@ -2,7 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains sees a new element added by a getter that is hit during iteration
+description: Array.prototype.includes sees a new element added by a getter that is hit during iteration
 author: Domenic Denicola
 ---*/
 
@@ -15,7 +15,7 @@ var arrayLike = {
     }
 };
 
-var result = Array.prototype.contains.call(arrayLike, 'c');
+var result = Array.prototype.includes.call(arrayLike, 'c');
 
 if (result !== true) {
     $ERROR('Expected array-like to contain "c", which was added by the getter for the 1st element');

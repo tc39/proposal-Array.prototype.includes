@@ -2,7 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains gets length property from the prototype if it's available
+description: Array.prototype.includes gets length property from the prototype if it's available
 author: Domenic Denicola
 ---*/
 
@@ -17,6 +17,6 @@ Object.defineProperty(arrayLike, '1', {
     }
 });
 
-if (Array.prototype.contains.call(arrayLike, 'a') !== true) {
+if (Array.prototype.includes.call(arrayLike, 'a') !== true) {
     $ERROR('Expected length to be determined from the prototype');
 }

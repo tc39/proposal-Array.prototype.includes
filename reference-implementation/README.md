@@ -1,4 +1,4 @@
-# `Array.prototype.contains` Reference Implementation
+# `Array.prototype.includes` Reference Implementation
 
 The reference implementation is meant to be a line-by-line transcription of the specification from ECMASpeak into JavaScript, as much as is possible.
 

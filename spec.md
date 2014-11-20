@@ -1,10 +1,10 @@
-# Array.prototype.contains ( searchElement [ , fromIndex ] )
+# Array.prototype.includes ( searchElement [ , fromIndex ] )
 
-NOTE `contains` compares _searchElement_ to the elements of the array, in ascending order, using the SameValueZero algorithm, and if found at any position, returns **true**; otherwise, **false** is returned.
+NOTE `includes` compares _searchElement_ to the elements of the array, in ascending order, using the SameValueZero algorithm, and if found at any position, returns **true**; otherwise, **false** is returned.
 
 The optional second argument _fromIndex_ defaults to 0 (i.e. the whole array is searched). If it is greater than or equal to the length of the array, **false** is returned, i.e. the array will not be searched. If it is negative, it is used as the offset from the end of the array to compute _fromIndex_. If the computed index is less than 0, the whole array will be searched.
 
-When the `contains` method is called, the following steps are taken:
+When the `includes` method is called, the following steps are taken:
 
 1. Let _O_ be the result of calling ToObject passing the **this** value as the argument.
 1. ReturnIfAbrupt(_O_).
@@ -26,4 +26,4 @@ When the `contains` method is called, the following steps are taken:
     1. Increase _k_ by 1.
 1. Return **false**.
 
-The `length` property of the `contains` method is **1**.
+The `length` property of the `includes` method is **1**.

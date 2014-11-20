@@ -2,7 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains treats a missing length property as zero
+description: Array.prototype.includes treats a missing length property as zero
 author: Domenic Denicola
 ---*/
 
@@ -15,6 +15,6 @@ var arrayLikeWithTraps = {
     }
 };
 
-if (Array.prototype.contains.call(arrayLikeWithTraps, 'a') !== false) {
+if (Array.prototype.includes.call(arrayLikeWithTraps, 'a') !== false) {
     $ERROR('Expected a length-less object not to contain anything');
 }

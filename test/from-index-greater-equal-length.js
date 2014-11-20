@@ -2,16 +2,16 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains returns false if fromIndex
+description: Array.prototype.includes returns false if fromIndex
              is greater or equal to the length of the array
 author: Robert Kowalski
 ---*/
 
-if ([1, 2].contains(2, 3) !== false) {
+if ([1, 2].includes(2, 3) !== false) {
     $ERROR('Expected that the array was not searched');
 }
 
-if ([1, 2].contains(2, 2) !== false) {
+if ([1, 2].includes(2, 2) !== false) {
     $ERROR('Expected that the array was not searched');
 }
 
@@ -25,10 +25,10 @@ var arrayLikeWithTrap = {
     }
 };
 
-if (Array.prototype.contains.call(arrayLikeWithTrap, 'c', 2) !== false) {
+if (Array.prototype.includes.call(arrayLikeWithTrap, 'c', 2) !== false) {
     $ERROR('Expected that the array was not searched');
 }
 
-if (Array.prototype.contains.call(arrayLikeWithTrap, 'c', 3) !== false) {
+if (Array.prototype.includes.call(arrayLikeWithTrap, 'c', 3) !== false) {
     $ERROR('Expected that the array was not searched');
 }

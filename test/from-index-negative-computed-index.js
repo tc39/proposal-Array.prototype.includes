@@ -2,17 +2,17 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains searches the whole array
+description: Array.prototype.includes searches the whole array
              if the computed index from the given negative fromIndex
              argument is less than 0
 author: Robert Kowalski
 ---*/
 
-if ([1, 3].contains(1, -4) !== true) {
+if ([1, 3].includes(1, -4) !== true) {
     $ERROR('Expected that the whole array was searched');
 }
 
-if ([1, 3].contains(3, -4) !== true) {
+if ([1, 3].includes(3, -4) !== true) {
     $ERROR('Expected that the whole array was searched');
 }
 
@@ -27,10 +27,10 @@ var arrayLike = {
     }
 };
 
-if (Array.prototype.contains.call(arrayLike, 'a', -4) !== true) {
+if (Array.prototype.includes.call(arrayLike, 'a', -4) !== true) {
     $ERROR('Expected that the whole array-like was searched');
 }
 
-if (Array.prototype.contains.call(arrayLike, 'b', -4) !== true) {
+if (Array.prototype.includes.call(arrayLike, 'b', -4) !== true) {
     $ERROR('Expected that the whole array-like was searched');
 }

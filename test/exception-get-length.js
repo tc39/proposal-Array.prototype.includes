@@ -2,7 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains should terminate if an exception occurs getting the length
+description: Array.prototype.includes should terminate if an exception occurs getting the length
 negative: Test262Error
 includes: [Test262Error.js]
 ---*/
@@ -22,4 +22,4 @@ var throwingLength = {
     }
 };
 
-Array.prototype.contains.call(throwingLength, 'a', fromIndexTrap);
+Array.prototype.includes.call(throwingLength, 'a', fromIndexTrap);

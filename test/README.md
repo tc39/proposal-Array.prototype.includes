@@ -1,4 +1,4 @@
-# `Array.prototype.contains` Tests
+# `Array.prototype.includes` Tests
 
 These tests are written in test262 format. To run them against the reference implementation (which only works in Node 0.11), do
 

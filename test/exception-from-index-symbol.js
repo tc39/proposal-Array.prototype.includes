@@ -2,7 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains should terminate if ToNumber ends up being called on a symbol fromIndex
+description: Array.prototype.includes should terminate if ToNumber ends up being called on a symbol fromIndex
 negative: TypeError
 ---*/
 
@@ -13,4 +13,4 @@ var trappedZero = {
     }
 };
 
-Array.prototype.contains.call(trappedZero, 'a', Symbol());
+Array.prototype.includes.call(trappedZero, 'a', Symbol());

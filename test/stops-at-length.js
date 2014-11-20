@@ -2,7 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains stops once it hits the length of an array-like, even if there are more after
+description: Array.prototype.includes stops once it hits the length of an array-like, even if there are more after
 author: Domenic Denicola
 ---*/
 
@@ -15,6 +15,6 @@ var arrayLike = {
     }
 };
 
-if (Array.prototype.contains.call(arrayLike, 'c') !== false) {
+if (Array.prototype.includes.call(arrayLike, 'c') !== false) {
     $ERROR('Expected array-like to not contain "c"');
 }

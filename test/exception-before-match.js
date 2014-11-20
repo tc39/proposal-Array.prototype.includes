@@ -2,7 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains should terminate if getting an index throws an exception
+description: Array.prototype.includes should terminate if getting an index throws an exception
 negative: Test262Error
 includes: [Test262Error.js]
 ---*/
@@ -17,4 +17,4 @@ var trappedZero = {
     }
 };
 
-Array.prototype.contains.call(trappedZero, 'a');
+Array.prototype.includes.call(trappedZero, 'a');

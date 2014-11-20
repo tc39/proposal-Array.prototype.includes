@@ -2,34 +2,34 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains works on objects
+description: Array.prototype.includes works on objects
 author: Domenic Denicola
 ---*/
 
-if (['a', 'b', 'c'].contains({}) !== false) {
+if (['a', 'b', 'c'].includes({}) !== false) {
     $ERROR('Did not expect the object to be found');
 }
 
-if ([{}, {}].contains({}) !== false) {
+if ([{}, {}].includes({}) !== false) {
     $ERROR('Did not expect the object to be found');
 }
 
 var obj = {};
 
-if ([obj].contains(obj) !== true) {
+if ([obj].includes(obj) !== true) {
     $ERROR('Expected the object to be found');
 }
 
-if ([obj].contains(obj, 1) !== false) {
+if ([obj].includes(obj, 1) !== false) {
     $ERROR('Did not expect the object to be found');
 }
 
-if ([obj, obj].contains(obj, 1) !== true) {
+if ([obj, obj].includes(obj, 1) !== true) {
     $ERROR('Expected the object to be found');
 }
 
 var stringyObject = { toString: function () { return 'a'; } };
 
-if (['a', 'b', obj].contains(stringyObject) !== false) {
+if (['a', 'b', obj].includes(stringyObject) !== false) {
     $ERROR('Did not expect the object to be found');
 }

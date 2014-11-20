@@ -9,7 +9,7 @@ var ToString = require("especially/abstract-operations").ToString;
 var abs = require("especially/math").abs;
 var define_built_in_data_property = require("especially/meta").define_built_in_data_property;
 
-define_built_in_data_property(Array.prototype, "contains", function contains(searchElement) {
+define_built_in_data_property(Array.prototype, "includes", function includes(searchElement) {
     var fromIndex = arguments[1];
 
     var O = ToObject(this);

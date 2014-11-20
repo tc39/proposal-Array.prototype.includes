@@ -2,10 +2,10 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.contains should have length 1
+description: Array.prototype.includes should have length 1
 author: Domenic Denicola
 ---*/
 
-if (Array.prototype.contains.length !== 1) {
-    $ERROR('Expected Array.prototype.contains.length to be 1');
+if (Array.prototype.includes.length !== 1) {
+    $ERROR('Expected Array.prototype.includes.length to be 1');
 }
