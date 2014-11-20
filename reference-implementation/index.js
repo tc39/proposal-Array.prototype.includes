@@ -6,7 +6,6 @@ var ToInteger = require("especially/abstract-operations").ToInteger;
 var ToLength = require("especially/abstract-operations").ToLength;
 var ToObject = require("especially/abstract-operations").ToObject;
 var ToString = require("especially/abstract-operations").ToString;
-var abs = require("especially/math").abs;
 var define_built_in_data_property = require("especially/meta").define_built_in_data_property;
 
 define_built_in_data_property(Array.prototype, "includes", function includes(searchElement) {
@@ -21,15 +20,11 @@ define_built_in_data_property(Array.prototype, "includes", function includes(sea
 
     var n = ToInteger(fromIndex);
 
-    if (n >= len) {
-        return false;
-    }
-
     var k;
     if (n >= 0) {
         k = n;
     } else {
-        k = len - abs(n);
+        k = len + n;
         if (k < 0) {
             k = 0;
         }
