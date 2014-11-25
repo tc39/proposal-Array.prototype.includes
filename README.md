@@ -2,7 +2,7 @@
 
 ## Status
 
-This proposal is officially in stage 1 of [the TC39 process](https://docs.google.com/document/d/1QbEE0BsO4lvl7NFTn5WXWeiEIBfaVUF7Dk0hpPpPDzU/edit); the author believes it is ready to advance to stage 2, but has not yet had time to present to the committee.
+This proposal is officially in stage 2 of [the TC39 process], and is awaiting experimental implementations to land and editor review before being ready to [advance to stage 3](https://github.com/tc39/Array.prototype.includes/issues/12).
 
 This proposal was formerly for `Array.prototype.contains`, but that name [is not web-compatible](http://esdiscuss.org/topic/having-a-non-enumerable-array-prototype-contains-may-not-be-web-compatible). Per the November 2014 TC39 meeting, the name of both `String.prototype.contains` and `Array.prototype.contains` was changed to `includes` to dodge that bullet.
 
