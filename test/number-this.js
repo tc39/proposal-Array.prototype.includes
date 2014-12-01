@@ -2,9 +2,9 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.includes should use ToObject on this, so that when
-             called with a number, it picks up numeric properties from
-             Number.prototype
+description: >
+    Array.prototype.includes should use ToObject on this, so that when called with a number, it picks up numeric
+    properties from Number.prototype
 author: Domenic Denicola
 ---*/
 

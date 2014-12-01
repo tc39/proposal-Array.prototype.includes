@@ -2,8 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.includes should search the whole array, as
-             the optional second argument fromIndex defaults to 0
+description: >
+    Array.prototype.includes should search the whole array, as the optional second argument fromIndex defaults to 0
 author: Robert Kowalski
 ---*/
 

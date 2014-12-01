@@ -2,8 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.includes should not have its behavior impacted by modifications to the global property
-             Object
+description: >
+    Array.prototype.includes should not have its behavior impacted by modifications to the global property Object
 author: Domenic Denicola
 ---*/
 

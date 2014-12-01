@@ -2,8 +2,7 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.includes returns false if fromIndex
-             is greater or equal to the length of the array
+description: Array.prototype.includes returns false if fromIndex is greater or equal to the length of the array
 author: Robert Kowalski
 ---*/
 

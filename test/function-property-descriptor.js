@@ -4,8 +4,7 @@
 /*---
 description: Array.prototype.includes should be writable, non-enumerable, and configurable
 author: Domenic Denicola
-includes:
-    - dataPropertyAttributesAreCorrect.js
+includes: [dataPropertyAttributesAreCorrect.js]
 ---*/
 
 var propertyDescriptor = Object.getOwnPropertyDescriptor(Array.prototype, 'includes');

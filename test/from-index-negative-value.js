@@ -2,8 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.includes should use a negative value
-             as the offset from the end of the array to compute fromIndex
+description: >
+    Array.prototype.includes should use a negative value as the offset from the end of the array to compute fromIndex
 author: Robert Kowalski
 ---*/
 

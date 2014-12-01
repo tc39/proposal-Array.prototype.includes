@@ -2,9 +2,9 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: Array.prototype.includes searches the whole array
-             if the computed index from the given negative fromIndex
-             argument is less than 0
+description: >
+    Array.prototype.includes searches the whole array if the computed index from the given negative fromIndex argument
+    is less than 0
 author: Robert Kowalski
 ---*/
 
