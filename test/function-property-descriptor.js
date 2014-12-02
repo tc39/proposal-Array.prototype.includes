@@ -9,18 +9,9 @@ includes: [dataPropertyAttributesAreCorrect.js]
 
 var propertyDescriptor = Object.getOwnPropertyDescriptor(Array.prototype, 'includes');
 
-if (propertyDescriptor.writable !== true) {
-    $ERROR('Expected Array.prototype.includes to be writable');
-}
-
-if (propertyDescriptor.enumerable !== false) {
-    $ERROR('Expected Array.prototype.includes to be non-enumerable');
-}
-
-if (propertyDescriptor.configurable !== true) {
-    $ERROR('Expected Array.prototype.includes to be configurable');
-}
-
+assert.sameValue(propertyDescriptor.writable, true, 'Expected Array.prototype.includes to be writable');
+assert.sameValue(propertyDescriptor.enumerable, false, 'Expected Array.prototype.includes to be non-enumerable');
+assert.sameValue(propertyDescriptor.configurable, true, 'Expected Array.prototype.includes to be configurable');
 
 if (!dataPropertyAttributesAreCorrect(Array.prototype, 'includes', Array.prototype.includes, true, false, true)) {
     $ERROR('Expected Array.prototype.includes to be writable, non-enumerable, and configurable (based on behavior)');

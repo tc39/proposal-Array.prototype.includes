@@ -15,6 +15,5 @@ var arrayLikeWithTraps = {
     }
 };
 
-if (Array.prototype.includes.call(arrayLikeWithTraps, 'a') !== false) {
-    $ERROR('Expected a length-less object not to contain anything');
-}
+assert.sameValue(Array.prototype.includes.call(arrayLikeWithTraps, 'a'), false,
+    'Expected a length-less object not to contain anything');

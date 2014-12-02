@@ -6,6 +6,5 @@ description: Array.prototype.includes should have name property with value 'incl
 author: Domenic Denicola
 ---*/
 
-if (Array.prototype.includes.name !== 'includes') {
-    $ERROR('Expected Array.prototype.includes.name to be \'includes\'');
-}
+assert.sameValue(Array.prototype.includes.name, 'includes',
+    'Expected Array.prototype.includes.name to be \'includes\'');

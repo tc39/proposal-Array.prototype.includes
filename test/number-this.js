@@ -12,17 +12,6 @@ Number.prototype[0] = "a";
 Number.prototype[1] = "b";
 Number.prototype.length = 2;
 
-var result1 = Array.prototype.includes.call(5, "a");
-if (result1 !== true) {
-    $ERROR('Expected 5 to contain "a"');
-}
-
-var result2 = Array.prototype.includes.call(5, "b");
-if (result2 !== true) {
-    $ERROR('Expected 5 to contain "b"');
-}
-
-var result3 = Array.prototype.includes.call(5, "c");
-if (result3 !== false) {
-    $ERROR('Expected 5 to not contain "c"');
-}
+assert.sameValue(Array.prototype.includes.call(5, "a"), true, 'Expected 5 to contain "a"');
+assert.sameValue(Array.prototype.includes.call(5, "b"), true, 'Expected 5 to contain "b"');
+assert.sameValue(Array.prototype.includes.call(5, "c"), false, 'Expected 5 to not contain "c"');

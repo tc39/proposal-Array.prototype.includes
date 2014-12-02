@@ -14,14 +14,6 @@ function fakeObject() {
 var global = (new Function("return this;"))();
 global.Object = fakeObject;
 
-if (Object !== fakeObject) {
-    $ERROR('Sanity check failed: could not modify the global Object');
-}
-
-if ([].includes('a') !== false) {
-    $ERROR('Expected the empty array not to contain anything');
-}
-
-if (Array.prototype.includes.call(1, 'a') !== false) {
-    $ERROR('Expected the number 1 not to contain anything');
-}
+assert.sameValue(Object, fakeObject, 'Sanity check failed: could not modify the global Object');
+assert.sameValue([].includes('a'), false, 'Expected the empty array not to contain anything');
+assert.sameValue(Array.prototype.includes.call(1, 'a'), false, 'Expected the number 1 not to contain anything');

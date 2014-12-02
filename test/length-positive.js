@@ -8,21 +8,13 @@ author: Domenic Denicola
 
 var fromIndexForLargeIndexTests = 9007199254740990;
 
-if (Array.prototype.includes.call({ length: 1 }, 2) !== false) {
-    $ERROR('Expected { length: 1 } to not contain 2');
-}
-
-if (Array.prototype.includes.call({ length: 1, 0: 'a' }, 'a') !== true) {
-    $ERROR('Expected { length: 1, 0: \'a\' } to contain \'a\'');
-}
-
-if (Array.prototype.includes.call({ length: +Infinity, 0: 'a' }, 'a') !== true) {
-    $ERROR('Expected { length: +Infinity, 0: \'a\' } to contain \'a\'');
-}
-
-if (Array.prototype.includes.call({ length: +Infinity }, 'a', fromIndexForLargeIndexTests) !== false) {
-    $ERROR('Expected { length: +Infinity } to not contain \'a\'');
-}
+assert.sameValue(Array.prototype.includes.call({ length: 1 }, 2), false, 'Expected { length: 1 } to not contain 2');
+assert.sameValue(Array.prototype.includes.call({ length: 1, 0: 'a' }, 'a'), true,
+    'Expected { length: 1, 0: \'a\' } to contain \'a\'');
+assert.sameValue(Array.prototype.includes.call({ length: +Infinity, 0: 'a' }, 'a'), true,
+    'Expected { length: +Infinity, 0: \'a\' } to contain \'a\'');
+assert.sameValue(Array.prototype.includes.call({ length: +Infinity }, 'a', fromIndexForLargeIndexTests), false,
+    'Expected { length: +Infinity } to not contain \'a\'');
 
 var arrayLikeWithTrap = {
     length: +Infinity,
@@ -32,15 +24,13 @@ var arrayLikeWithTrap = {
     '9007199254740993': 'a'
 };
 
-if (Array.prototype.includes.call(arrayLikeWithTrap, 'a', fromIndexForLargeIndexTests) !== false) {
-    $ERROR('Expected trapped array-like with length 9007199254740992 to not contain \'a\'');
-}
+assert.sameValue(Array.prototype.includes.call(arrayLikeWithTrap, 'a', fromIndexForLargeIndexTests), false,
+    'Expected trapped array-like with length 9007199254740992 to not contain \'a\'');
 
 var arrayLikeWithTooBigLength = {
     length: 9007199254740995,
     '9007199254740992': 'a'
 };
 
-if (Array.prototype.includes.call(arrayLikeWithTooBigLength, 'a', fromIndexForLargeIndexTests) !== false) {
-    $ERROR('Expected array-like with too-big length to not contain \'a\', since it is beyond the max length');
-}
+assert.sameValue(Array.prototype.includes.call(arrayLikeWithTooBigLength, 'a', fromIndexForLargeIndexTests), false,
+    'Expected array-like with too-big length to not contain \'a\', since it is beyond the max length');

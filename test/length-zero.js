@@ -6,55 +6,28 @@ description: Array.prototype.includes should always return false on zero-length 
 author: Domenic Denicola
 ---*/
 
-if ([].includes(2) !== false) {
-    $ERROR('Expected [] to not contain 2');
-}
-
-if ([].includes() !== false) {
-    $ERROR('Expected [] to not contain (no argument passed)');
-}
-
-if ([].includes(undefined) !== false) {
-    $ERROR('Expected [] to not contain undefined');
-}
-
-if ([].includes(NaN) !== false) {
-    $ERROR('Expected [] to not contain NaN');
-}
+assert.sameValue([].includes(2), false, 'Expected [] to not contain 2');
+assert.sameValue([].includes(), false, 'Expected [] to not contain (no argument passed)');
+assert.sameValue([].includes(undefined), false, 'Expected [] to not contain undefined');
+assert.sameValue([].includes(NaN), false, 'Expected [] to not contain NaN');
 
 
-if (Array.prototype.includes.call({ length: 0 }, 2) !== false) {
-    $ERROR('Expected { length: 0 } to not contain 2');
-}
+assert.sameValue(Array.prototype.includes.call({ length: 0 }, 2), false, 'Expected { length: 0 } to not contain 2');
+assert.sameValue(Array.prototype.includes.call({ length: 0 }), false,
+    'Expected { length: 0 } to not contain (no argument passed)');
+assert.sameValue(Array.prototype.includes.call({ length: 0 }, undefined), false,
+    'Expected { length: 0 } to not contain undefined');
+assert.sameValue(Array.prototype.includes.call({ length: 0 }, NaN), false,
+    'Expected { length: 0 } to not contain NaN');
 
-if (Array.prototype.includes.call({ length: 0 }) !== false) {
-    $ERROR('Expected { length: 0 } to not contain (no argument passed)');
-}
-
-if (Array.prototype.includes.call({ length: 0 }, undefined) !== false) {
-    $ERROR('Expected { length: 0 } to not contain undefined');
-}
-
-if (Array.prototype.includes.call({ length: 0 }, NaN) !== false) {
-    $ERROR('Expected { length: 0 } to not contain NaN');
-}
-
-
-if (Array.prototype.includes.call({ length: 0, 0: 2 }, 2) !== false) {
-    $ERROR('Expected { length: 0, 0: 2 } to not contain 2');
-}
-
-if (Array.prototype.includes.call({ length: 0, 0: undefined }) !== false) {
-    $ERROR('Expected { length: 0, 0: undefined } to not contain (no argument passed)');
-}
-
-if (Array.prototype.includes.call({ length: 0, 0: undefined }, undefined) !== false) {
-    $ERROR('Expected { length: 0, 0: undefined } to not contain undefined');
-}
-
-if (Array.prototype.includes.call({ length: 0, 0: NaN }, NaN) !== false) {
-    $ERROR('Expected { length: 0, 0: NaN } to not contain NaN');
-}
+assert.sameValue(Array.prototype.includes.call({ length: 0, 0: 2 }, 2), false,
+    'Expected { length: 0, 0: 2 } to not contain 2');
+assert.sameValue(Array.prototype.includes.call({ length: 0, 0: undefined }), false,
+    'Expected { length: 0, 0: undefined } to not contain (no argument passed)');
+assert.sameValue(Array.prototype.includes.call({ length: 0, 0: undefined }, undefined), false,
+    'Expected { length: 0, 0: undefined } to not contain undefined');
+assert.sameValue(Array.prototype.includes.call({ length: 0, 0: NaN }, NaN), false,
+    'Expected { length: 0, 0: NaN } to not contain NaN');
 
 
 var arrayLikeWithTrap = {

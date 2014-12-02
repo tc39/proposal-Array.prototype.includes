@@ -17,6 +17,4 @@ Object.defineProperty(arrayLike, '1', {
     }
 });
 
-if (Array.prototype.includes.call(arrayLike, 'a') !== true) {
-    $ERROR('Expected length to be determined from the prototype');
-}
+assert(Array.prototype.includes.call(arrayLike, 'a'), 'Expected length to be determined from the prototype');

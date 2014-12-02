@@ -7,13 +7,8 @@ description: >
 author: Robert Kowalski
 ---*/
 
-if ([10, 11].includes(10) !== true) {
-    $ERROR('Expected that the whole array was searched');
-}
-
-if ([10, 11].includes(11) !== true) {
-    $ERROR('Expected that the whole array was searched');
-}
+assert([10, 11].includes(10), 'Expected that the whole array was searched');
+assert([10, 11].includes(11), 'Expected that the whole array was searched');
 
 var arrayLike = {
     length: 2,
@@ -25,10 +20,5 @@ var arrayLike = {
     }
 };
 
-if (Array.prototype.includes.call(arrayLike, '1') !== true) {
-    $ERROR('Expected that the whole array-like was searched');
-}
-
-if (Array.prototype.includes.call(arrayLike, '2') !== true) {
-    $ERROR('Expected that the whole array-like was searched');
-}
+assert(Array.prototype.includes.call(arrayLike, '1'), 'Expected that the whole array-like was searched');
+assert(Array.prototype.includes.call(arrayLike, '2'), 'Expected that the whole array-like was searched');

@@ -15,8 +15,5 @@ var arrayLike = {
     }
 };
 
-var result = Array.prototype.includes.call(arrayLike, 'c');
-
-if (result !== true) {
-    $ERROR('Expected array-like to contain "c", which was added by the getter for the 1st element');
-}
+assert(Array.prototype.includes.call(arrayLike, 'c'),
+    'Expected array-like to contain "c", which was added by the getter for the 1st element');

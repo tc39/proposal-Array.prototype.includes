@@ -7,17 +7,9 @@ description: >
 author: Robert Kowalski
 ---*/
 
-if ([12, 13].includes(13, -1) !== true) {
-    $ERROR('Expected to find 13');
-}
-
-if ([12, 13].includes(12, -1) !== false) {
-    $ERROR('Should not find 12');
-}
-
-if ([12, 13].includes(12, -2) !== true) {
-    $ERROR('Should find 12');
-}
+assert.sameValue([12, 13].includes(13, -1), true, 'Expected to find 13');
+assert.sameValue([12, 13].includes(12, -1), false, 'Should not find 12');
+assert.sameValue([12, 13].includes(12, -2), true, 'Should find 12');
 
 var arrayLike = {
     length: 2,
@@ -29,14 +21,6 @@ var arrayLike = {
     }
 };
 
-if (Array.prototype.includes.call(arrayLike, 'b', -1) !== true) {
-    $ERROR('Expected to find b');
-}
-
-if (Array.prototype.includes.call(arrayLike, 'a', -1) !== false) {
-    $ERROR('Should not find a');
-}
-
-if (Array.prototype.includes.call(arrayLike, 'a', -2) !== true) {
-    $ERROR('Should find a');
-}
+assert.sameValue(Array.prototype.includes.call(arrayLike, 'b', -1), true, 'Expected to find b');
+assert.sameValue(Array.prototype.includes.call(arrayLike, 'a', -1), false, 'Should not find a');
+assert.sameValue(Array.prototype.includes.call(arrayLike, 'a', -2), true, 'Should find a');

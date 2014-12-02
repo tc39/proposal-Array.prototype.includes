@@ -6,30 +6,14 @@ description: Array.prototype.includes works on objects
 author: Domenic Denicola
 ---*/
 
-if (['a', 'b', 'c'].includes({}) !== false) {
-    $ERROR('Did not expect the object to be found');
-}
-
-if ([{}, {}].includes({}) !== false) {
-    $ERROR('Did not expect the object to be found');
-}
+assert.sameValue(['a', 'b', 'c'].includes({}), false, 'Did not expect the object to be found');
+assert.sameValue([{}, {}].includes({}), false, 'Did not expect the object to be found');
 
 var obj = {};
 
-if ([obj].includes(obj) !== true) {
-    $ERROR('Expected the object to be found');
-}
-
-if ([obj].includes(obj, 1) !== false) {
-    $ERROR('Did not expect the object to be found');
-}
-
-if ([obj, obj].includes(obj, 1) !== true) {
-    $ERROR('Expected the object to be found');
-}
+assert.sameValue([obj].includes(obj), true, 'Expected the object to be found');
+assert.sameValue([obj].includes(obj, 1), false, 'Did not expect the object to be found');
+assert.sameValue([obj, obj].includes(obj, 1), true, 'Expected the object to be found');
 
 var stringyObject = { toString: function () { return 'a'; } };
-
-if (['a', 'b', obj].includes(stringyObject) !== false) {
-    $ERROR('Did not expect the object to be found');
-}
+assert.sameValue(['a', 'b', obj].includes(stringyObject), false, 'Did not expect the object to be found');

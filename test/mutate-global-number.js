@@ -14,14 +14,6 @@ function fakeNumber() {
 var global = (new Function("return this;"))();
 global.Number = fakeNumber;
 
-if (Number !== fakeNumber) {
-    $ERROR('Sanity check failed: could not modify the global Number');
-}
-
-if ([].includes('a') !== false) {
-    $ERROR('Expected the empty array not to contain anything');
-}
-
-if (Array.prototype.includes.call(1, 'a') !== false) {
-    $ERROR('Expected the number 1 not to contain anything');
-}
+assert.sameValue(Number, fakeNumber, 'Sanity check failed: could not modify the global Number');
+assert.sameValue([].includes('a'), false, 'Expected the empty array not to contain anything');
+assert.sameValue(Array.prototype.includes.call(1, 'a'), false, 'Expected the number 1 not to contain anything');

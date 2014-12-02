@@ -16,8 +16,5 @@ var arrayLike = {
     2: 'c'
 };
 
-var result = Array.prototype.includes.call(arrayLike, 'c');
-
-if (result !== false) {
-    $ERROR('Expected array-like to not contain "c", which was removed by the getter for the 1st element');
-}
+assert.sameValue(Array.prototype.includes.call(arrayLike, 'c'), false,
+    'Expected array-like to not contain "c", which was removed by the getter for the 1st element');

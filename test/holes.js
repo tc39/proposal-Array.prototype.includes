@@ -6,18 +6,5 @@ description: Array.prototype.includes does not skip holes; instead it treates th
 author: Domenic Denicola
 ---*/
 
-var arrayWithHoles = [,,,];
-
-var result1 = Array.prototype.includes.call(arrayWithHoles, undefined);
-
-if (result1 !== true) {
-    $ERROR('Expected array with many holes to contain undefined');
-}
-
-var arrayWithASingleHole = ['a', 'b',, 'd'];
-
-var result2 = arrayWithASingleHole.includes(undefined);
-
-if (result2 !== true) {
-    $ERROR('Expected array with a single hole to contain undefined');
-}
+assert([,,,].includes(undefined), 'Expected array with many holes to contain undefined');
+assert(['a', 'b',, 'd'].includes(undefined), 'Expected array with a single hole to contain undefined');

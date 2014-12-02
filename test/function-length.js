@@ -6,6 +6,4 @@ description: Array.prototype.includes should have length 1
 author: Domenic Denicola
 ---*/
 
-if (Array.prototype.includes.length !== 1) {
-    $ERROR('Expected Array.prototype.includes.length to be 1');
-}
+assert.sameValue(Array.prototype.includes.length, 1, 'Expected Array.prototype.includes.length to be 1');

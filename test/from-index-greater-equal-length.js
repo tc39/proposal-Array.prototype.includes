@@ -6,13 +6,8 @@ description: Array.prototype.includes returns false if fromIndex is greater or e
 author: Robert Kowalski
 ---*/
 
-if ([1, 2].includes(2, 3) !== false) {
-    $ERROR('Expected that the array was not searched');
-}
-
-if ([1, 2].includes(2, 2) !== false) {
-    $ERROR('Expected that the array was not searched');
-}
+assert.sameValue([1, 2].includes(2, 3), false, 'Expected that the array was not searched');
+assert.sameValue([1, 2].includes(2, 2), false, 'Expected that the array was not searched');
 
 var arrayLikeWithTrap = {
     length: 2,
@@ -24,10 +19,7 @@ var arrayLikeWithTrap = {
     }
 };
 
-if (Array.prototype.includes.call(arrayLikeWithTrap, 'c', 2) !== false) {
-    $ERROR('Expected that the array was not searched');
-}
-
-if (Array.prototype.includes.call(arrayLikeWithTrap, 'c', 3) !== false) {
-    $ERROR('Expected that the array was not searched');
-}
+assert.sameValue(Array.prototype.includes.call(arrayLikeWithTrap, 'c', 2), false,
+    'Expected that the array-like was not searched');
+assert.sameValue(Array.prototype.includes.call(arrayLikeWithTrap, 'c', 3), false,
+    'Expected that the array-like was not searched');

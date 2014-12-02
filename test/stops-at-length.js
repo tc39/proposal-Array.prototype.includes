@@ -15,6 +15,4 @@ var arrayLike = {
     }
 };
 
-if (Array.prototype.includes.call(arrayLike, 'c') !== false) {
-    $ERROR('Expected array-like to not contain "c"');
-}
+assert.sameValue(Array.prototype.includes.call(arrayLike, 'c'), false, 'Expected array-like to not contain "c"');
