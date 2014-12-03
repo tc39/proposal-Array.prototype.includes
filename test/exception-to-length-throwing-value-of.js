@@ -3,7 +3,6 @@
 
 /*---
 description: Array.prototype.includes should terminate if an exception occurs converting the length to a number
-negative: Test262Error
 includes: [Test262Error.js]
 ---*/
 
@@ -24,4 +23,6 @@ var badLength = {
     }
 };
 
-Array.prototype.includes.call(badLength, 'a', fromIndexTrap);
+assert.throws(Test262Error, function () {
+    Array.prototype.includes.call(badLength, 'a', fromIndexTrap);
+});

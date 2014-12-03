@@ -3,7 +3,6 @@
 
 /*---
 description: Array.prototype.includes should terminate if getting an index throws an exception
-negative: Test262Error
 includes: [Test262Error.js]
 ---*/
 
@@ -17,4 +16,6 @@ var trappedZero = {
     }
 };
 
-Array.prototype.includes.call(trappedZero, 'a');
+assert.throws(Test262Error, function () {
+    Array.prototype.includes.call(trappedZero, 'a');
+});

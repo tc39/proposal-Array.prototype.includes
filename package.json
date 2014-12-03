@@ -17,7 +17,7 @@
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "test262-harness": "^1.2.0"
+    "test262-harness": "domenic/test262-harness#assert-throws"
   },
   "dependencies": {
     "especially": "^1.8.2"

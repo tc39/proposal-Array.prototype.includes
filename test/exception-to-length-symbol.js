@@ -3,7 +3,6 @@
 
 /*---
 description: Array.prototype.includes should terminate if ToLength ends up being called on a symbol length
-negative: TypeError
 ---*/
 
 var fromIndexTrap = {
@@ -19,4 +18,6 @@ var badLength = {
     }
 };
 
-Array.prototype.includes.call(badLength, 'a', fromIndexTrap);
+assert.throws(TypeError, function () {
+    Array.prototype.includes.call(badLength, 'a', fromIndexTrap);
+});

@@ -3,7 +3,6 @@
 
 /*---
 description: Array.prototype.includes should terminate if ToNumber ends up being called on a symbol fromIndex
-negative: TypeError
 ---*/
 
 var trappedZero = {
@@ -13,4 +12,6 @@ var trappedZero = {
     }
 };
 
-Array.prototype.includes.call(trappedZero, 'a', Symbol());
+assert.throws(TypeError, function () {
+    Array.prototype.includes.call(trappedZero, 'a', Symbol());
+});
