@@ -4,15 +4,16 @@
 /*---
 description: >
     Array.prototype.includes should use ToObject on this, so that when called with a number, it picks up numeric
-    properties from Number.prototype
+    properties from Number.prototype (even in strict mode)
 author: Domenic Denicola
+flags: [onlyStrict]
 ---*/
 
 Number.prototype[0] = 'a';
 Number.prototype[1] = 'b';
 Object.defineProperty(Number.prototype, 2, {
     get: function () {
-        assert.sameValue(typeof this, 'object', 'Expected boxed this in sloppy mode');
+        assert.sameValue(typeof this, 'object', 'Expected boxed this even in strict mode');
         return 'c';
     }
 })
