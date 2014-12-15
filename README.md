@@ -76,6 +76,10 @@ SameValueZero is generally the better choice, as it allows you to detect if an a
 
 This introduces a slight refactoring hazard from `Array.prototype.indexOf` to `Array.prototype.includes`: they will indeed behave differently for arrays containing `NaN`s. However, it seems much more likely that code will become _less_ buggy via this refactoring, instead of causing problems. Introducing a new method, and accompanying it with the appropriate messaging around this case, should help.
 
+## Typed Arrays
+
+As with all non-mutating array methods, we also install this method on `%TypedArray%.prototype`.
+
 ## Illustrative Examples
 
 ```js

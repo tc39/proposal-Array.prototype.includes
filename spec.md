@@ -26,3 +26,11 @@ When the `includes` method is called, the following steps are taken:
 1. Return **false**.
 
 The `length` property of the `includes` method is **1**.
+
+# %TypedArray%.prototype.includes ( searchElement [ , fromIndex ] )
+
+`%TypedArray%.prototype.includes` is a distinct function that implements the same algorithm as `Array.prototype.includes` except that the **this** object’s [[ArrayLength]] internal slot is accessed in place of performing a [[Get]] of <code>"length"</code>. The implementation of the algorithm may be optimized with the knowledge that the **this** value is an object that has a fixed length and whose integer indexed properties are not sparse. However, such optimization must not introduce any observable changes in the specified behaviour of the algorithm.
+
+This function is not generic. If the **this** value is not a object with a [[TypedArrayName]] internal slot, a **TypeError** exception is immediately thrown when this function is called.
+
+The `length` property of the `includes` method is **1**.
