@@ -1,0 +1,8 @@
+script: bash ./deploy.sh
+env:
+  global:
+  - GH_REF: github.com/tc39/Array.prototype.includes.git
+  - secure: "gVIgu2xOcIx7lxtBr4MY3Ql4DnaV8hbL5/kB0ANAiXp10+5Rx4HyGEFMayYKWOS2CLhKhsWMJ3d2RPJTOewUKYofeGq3OC1UQvyLzdCZCGNNvBwIc4jIaUiHNfF9s3t8BsfyD48PvZZTaWbmijaXlPKX1VZF7jaEWJjWHV920Vo="
+language: node_js
+node_js:
+- iojs
