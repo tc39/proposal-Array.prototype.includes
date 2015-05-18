@@ -1,5 +1,7 @@
 # `Array.prototype.includes` Proposal
 
+[Spec](https://tc39.github.io/Array.prototype.includes/)
+
 ## Status
 
 This proposal is officially in stage 2 of [the TC39 process](https://docs.google.com/document/d/1QbEE0BsO4lvl7NFTn5WXWeiEIBfaVUF7Dk0hpPpPDzU), and is awaiting experimental implementations to land and editor review before being ready to [advance to stage 3](https://github.com/tc39/Array.prototype.includes/issues/12).
