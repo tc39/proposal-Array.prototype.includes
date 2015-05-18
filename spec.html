@@ -36,6 +36,10 @@
   </emu-alg>
 
   <p>The `length` property of the `includes` method is *1*.</p>
+
+  <emu-note>
+     The `includes` function is intentionally generic; it does not require that its *this* value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method.
+  </emu-note>
 </emu-clause>
 
 <emu-clause id="typedarray-prototype-includes">
