@@ -17,7 +17,7 @@
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "ecmarkup": "domenic/ecmarkup#jsdom-update",
+    "ecmarkup": "1.1.0",
     "test262-harness": "domenic/test262-harness#assert-throws"
   },
   "dependencies": {
