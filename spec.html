@@ -40,6 +40,10 @@
   <emu-note>
      The `includes` function is intentionally generic; it does not require that its *this* value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method.
   </emu-note>
+
+  <emu-note>
+    The `includes` method intentionally differs from the similar `indexOf` method in two ways. First, it uses the SameValueZero algorithm, instead of Strict Equality Comparison, allowing it to detect *NaN* array elements. Second, it does not skip missing array elements, instead treating them as *undefined*.
+  </emu-note>
 </emu-clause>
 
 <emu-clause id="typedarray-prototype-includes">
