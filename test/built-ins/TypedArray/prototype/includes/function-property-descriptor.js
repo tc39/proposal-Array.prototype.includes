@@ -2,7 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: %TypedArray%.prototype.includes should be writable, non-enumerable, and configurable
+description: >
+    %TypedArray%.prototype.includes should be writable, non-enumerable, and configurable
 author: Domenic Denicola
 includes: [dataPropertyAttributesAreCorrect.js]
 ---*/

@@ -2,7 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: %TypedArray%.prototype.includes throws a TypeError when used on non-typed arrays
+description: >
+    %TypedArray%.prototype.includes throws a TypeError when used on non-typed arrays
 author: Domenic Denicola
 ---*/
 

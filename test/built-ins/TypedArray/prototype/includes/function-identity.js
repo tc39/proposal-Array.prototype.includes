@@ -2,7 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: %TypedArray%.prototype.includes lives on the shared prototype and is not equal to Array.prototype.includes
+description: >
+    %TypedArray%.prototype.includes lives on the shared prototype and is not equal to Array.prototype.includes
 author: Domenic Denicola
 includes: [testTypedArrays.js]
 ---*/

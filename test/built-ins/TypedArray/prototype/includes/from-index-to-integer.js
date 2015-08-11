@@ -2,7 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: %TypedArray%.prototype.includes converts its fromIndex parameter to an integer
+description: >
+    %TypedArray%.prototype.includes converts its fromIndex parameter to an integer
 author: Domenic Denicola
 includes: [testTypedArrays.js]
 ---*/

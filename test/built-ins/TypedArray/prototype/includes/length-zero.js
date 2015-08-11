@@ -2,7 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: %TypedArray%.prototype.includes should always return false on zero-length typed arrays
+description: >
+    %TypedArray%.prototype.includes should always return false on zero-length typed arrays
 author: Domenic Denicola
 includes: [testTypedArrays.js]
 ---*/

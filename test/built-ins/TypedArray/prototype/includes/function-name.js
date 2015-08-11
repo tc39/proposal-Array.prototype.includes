@@ -2,7 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: %TypedArray%.prototype.includes should have name property with value 'includes'
+description: >
+    %TypedArray%.prototype.includes should have name property with value 'includes'
 author: Domenic Denicola
 ---*/
 

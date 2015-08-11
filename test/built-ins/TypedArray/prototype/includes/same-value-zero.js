@@ -2,7 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: %TypedArray%.prototype.includes should use the SameValueZero algorithm to compare
+description: >
+    %TypedArray%.prototype.includes should use the SameValueZero algorithm to compare
 author: Domenic Denicola
 includes: [testTypedArrays.js]
 ---*/

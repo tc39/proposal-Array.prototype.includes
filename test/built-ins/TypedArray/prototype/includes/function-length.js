@@ -2,7 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-description: %TypedArray%.prototype.includes should have length 1
+description: >
+    %TypedArray%.prototype.includes should have length 1
 author: Domenic Denicola
 ---*/
 
