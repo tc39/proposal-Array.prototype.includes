@@ -1,0 +1,55 @@
+<!doctype html>
+<head><meta charset="utf-8">
+<title>Array.prototype.includes</title><script type="application/json" id="menu-search-biblio">{"clauses":{"array-prototype-includes":{"location":"","id":"array-prototype-includes","aoid":null,"title":"Array.prototype.includes ( searchElement [ , fromIndex ] )","number":"1"},"typedarray-prototype-includes":{"location":"","id":"typedarray-prototype-includes","aoid":null,"title":"%TypedArray%.prototype.includes ( searchElement [ , fromIndex ] )","number":"2"},"sec-array.prototype-@@unscopables":{"location":"","id":"sec-array.prototype-@@unscopables","aoid":null,"title":"Array.prototype [ @@unscopables ]","number":"3"}},"ops":{},"productions":{},"terms":{},"examples":{},"notes":{},"tables":{},"figures":{}}</script></head><body><div id="menu-toggle">☰</div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#array-prototype-includes" title="Array.prototype.includes ( searchElement [ , fromIndex ] )"><span class="secnum">1</span> Array.prototype.includes ( searchElement [ , fromIndex ] )</a></li><li><span class="item-toggle-none"></span><a href="#typedarray-prototype-includes" title="%TypedArray%.prototype.includes ( searchElement [ , fromIndex ] )"><span class="secnum">2</span> %TypedArray%.prototype.includes ( searchElement [ , fromIndex ] )</a></li><li><span class="item-toggle-none"></span><a href="#sec-array.prototype-@@unscopables" title="Array.prototype [ @@unscopables ]"><span class="secnum">3</span> Array.prototype [ @@unscopables ]</a></li></ol></div></div><h1 class="version">Stage 4 Draft / November 17, 2015</h1><h1 class="title">Array.prototype.includes</h1>
+<script src="https://bterlson.github.io/ecmarkup/ecmarkup.js" defer=""></script>
+<link rel="stylesheet" href="https://bterlson.github.io/ecmarkup/elements.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_light.min.css">
+
+<emu-clause id="array-prototype-includes">
+  <h1><span class="secnum">1</span>Array.prototype.includes ( searchElement [ , fromIndex ] )<span class="utils"><span class="anchor"><a href="#array-prototype-includes">#</a></span></span></h1>
+
+  <emu-note><span class="note">Note 1</span>
+    <p><code>includes</code> compares <var>searchElement</var> to the elements of the array, in ascending order, using the <emu-xref aoid="SameValueZero"><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-samevaluezero">SameValueZero</a></emu-xref> algorithm, and if found at any position, returns <emu-val>true</emu-val>; otherwise, <emu-val>false</emu-val> is returned.</p>
+
+    <p>The optional second argument <var>fromIndex</var> defaults to 0 (i.e. the whole array is searched). If it is greater than or equal to the length of the array, <emu-val>false</emu-val> is returned, i.e. the array will not be searched. If it is negative, it is used as the offset from the end of the array to compute <var>fromIndex</var>. If the computed index is less than 0, the whole array will be searched.</p>
+  </emu-note>
+
+  <p>When the <code>includes</code> method is called, the following steps are taken:</p>
+
+  <emu-alg><ol><li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toobject">ToObject</a>(<emu-val>this</emu-val> value).</li><li>Let <var>len</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-get-o-p">Get</a>(<var>O</var>, "length")).</li><li>If <var>len</var> is 0, return <emu-val>false</emu-val>.</li><li>Let <var>n</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tointeger">ToInteger</a>(<var>fromIndex</var>). (If <var>fromIndex</var> is <emu-val>undefined</emu-val>, this step produces the value 0.)</li><li>If <var>n</var> ≥ 0, then<ol><li>Let <var>k</var> be <var>n</var>.</li></ol></li><li>Else <var>n</var> &lt; 0,<ol><li>Let <var>k</var> be <var>len</var> + <var>n</var>.</li><li>If <var>k</var> &lt; 0, then let <var>k</var> be 0.</li></ol></li><li>Repeat, while <var>k</var> &lt; <var>len</var><ol><li>Let <var>elementK</var> be the result of ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-get-o-p">Get</a>(<var>O</var>, ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>k</var>)).</li><li>If ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-samevaluezero">SameValueZero</a>(<var>searchElement</var>, <var>elementK</var>) is <emu-val>true</emu-val>, return <emu-val>true</emu-val>.</li><li>Increase <var>k</var> by 1.</li></ol></li><li>Return <emu-val>false</emu-val>.
+  </li></ol></emu-alg>
+
+  <p>The <code>length</code> property of the <code>includes</code> method is <emu-val>1</emu-val>.</p>
+
+  <emu-note><span class="note">Note 2</span>
+     The <code>includes</code> function is intentionally generic; it does not require that its <emu-val>this</emu-val> value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method.
+  
+  </emu-note>
+
+  <emu-note><span class="note">Note 3</span>
+    The <code>includes</code> method intentionally differs from the similar <code>indexOf</code> method in two ways. First, it uses the <emu-xref aoid="SameValueZero"><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-samevaluezero">SameValueZero</a></emu-xref> algorithm, instead of <emu-xref aoid="Strict Equality Comparison"><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-strict-equality-comparison">Strict Equality Comparison</a></emu-xref>, allowing it to detect <emu-val>NaN</emu-val> array elements. Second, it does not skip missing array elements, instead treating them as <emu-val>undefined</emu-val>.
+  
+  </emu-note>
+</emu-clause>
+
+<emu-clause id="typedarray-prototype-includes">
+  <h1><span class="secnum">2</span>%TypedArray%.prototype.includes ( searchElement [ , fromIndex ] )<span class="utils"><span class="anchor"><a href="#typedarray-prototype-includes">#</a></span></span></h1>
+
+  <p><code>%TypedArray%.prototype.includes</code> is a distinct function that implements the same algorithm as <code>Array.prototype.includes</code> as defined in  <emu-xref href="#array-prototype-includes"><a href="#array-prototype-includes">1</a></emu-xref> except that the <emu-val>this</emu-val> object’s [[ArrayLength]] internal slot is accessed in place of performing a [[Get]] of <emu-val>"length"</emu-val>. The implementation of the algorithm may be optimized with the knowledge that the <emu-val>this</emu-val> value is an object that has a fixed length and whose integer indexed properties are not sparse. However, such optimization must not introduce any observable changes in the specified behaviour of the algorithm.</p>
+
+  <p>This function is not generic. <emu-xref aoid="ValidateTypedArray"><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-validatetypedarray">ValidateTypedArray</a></emu-xref> is applied to the <emu-val>this</emu-val> value prior to evaluating the algorithm. If its result is an <emu-xref href="#sec-completion-record-specification-type"><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-completion-record-specification-type">abrupt completion</a></emu-xref> that exception is thrown instead of evaluating the algorithm.</p>
+
+  <p>The <code>length</code> property of the <code>includes</code> method is <emu-val>1</emu-val>.</p>
+</emu-clause>
+
+<emu-clause id="sec-array.prototype-@@unscopables">
+  <h1><span class="secnum">3</span>Array.prototype [ @@unscopables ]<span class="utils"><span class="anchor"><a href="#sec-array.prototype-@@unscopables">#</a></span></span></h1>
+  <p>The initial value of the @@unscopables data property is an object created by the following steps:</p>
+  <emu-alg><ol><li>Let <var>blackList</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objectcreate">ObjectCreate</a>(<emu-val>null</emu-val>).</li><li>Perform <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-createdataproperty">CreateDataProperty</a>(<var>blackList</var>, <code>"copyWithin"</code>, <emu-val>true</emu-val>).</li><li>Perform <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-createdataproperty">CreateDataProperty</a>(<var>blackList</var>, <code>"entries"</code>, <emu-val>true</emu-val>).</li><li>Perform <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-createdataproperty">CreateDataProperty</a>(<var>blackList</var>, <code>"fill"</code>, <emu-val>true</emu-val>).</li><li>Perform <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-createdataproperty">CreateDataProperty</a>(<var>blackList</var>, <code>"find"</code>, <emu-val>true</emu-val>).</li><li>Perform <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-createdataproperty">CreateDataProperty</a>(<var>blackList</var>, <code>"findIndex"</code>, <emu-val>true</emu-val>).</li><li><ins>Perform <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-createdataproperty">CreateDataProperty</a>(<var>blackList</var>, <code>"includes"</code>, <emu-val>true</emu-val>).</ins></li><li>Perform <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-createdataproperty">CreateDataProperty</a>(<var>blackList</var>, <code>"keys"</code>, <emu-val>true</emu-val>).</li><li>Perform <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-createdataproperty">CreateDataProperty</a>(<var>blackList</var>, <code>"values"</code>, <emu-val>true</emu-val>).</li><li>Assert: Each of the above calls will return <emu-val>true</emu-val>.</li><li>Return <var>blackList</var>.
+  </li></ol></emu-alg>
+  <p>This property has the attributes { [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }.</p>
+  <emu-note><span class="note">Note</span>
+    <p>The own property names of this object are property names that were not included as standard properties of <code>Array.prototype</code> prior to the ECMAScript 2015 specification. These names are ignored for <code>with</code> statement binding purposes in order to preserve the behaviour of existing code that might use one of these names as a binding in an outer scope that is shadowed by a <code>with</code> statement whose binding object is an Array object.</p>
+  </emu-note>
+</emu-clause>
+</body>
