@@ -4,6 +4,7 @@
   "description": "Tests and a polyfill for the ES proposal for Array.prototype.includes",
   "main": "reference-implementation/index.js",
   "scripts": {
+    "build": "mkdir -p out && ecmarkup spec.html out/index.html",
     "test": "test262-harness --prelude=reference-implementation/index.js --consoleCommand=\"node --harmony\" --runner=console test/built-ins/Array/prototype/includes/*.js"
   },
   "repository": "domenic/Array.prototype.includes",
